@@ -5,10 +5,19 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@vue/compiler-sfc": "^3.2.40",
+        "autoprefixer": "^10.4.12",
         "axios": "^0.27",
         "laravel-vite-plugin": "^0.6.0",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "vite": "^3.0.0"
+        "postcss": "^8.4.17",
+        "postcss-gap": "^1.0.0",
+        "tailwindcss": "^3.1.8",
+        "vite": "^3.0.0",
+        "vue-loader": "^17.0.0"
+    },
+    "dependencies": {
+        "@vitejs/plugin-vue": "^3.1.2",
+        "vue": "^3.2.36"
     }
 }
