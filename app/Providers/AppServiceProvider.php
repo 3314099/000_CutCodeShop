@@ -3,12 +3,11 @@
 namespace App\Providers;
 
 use App\Http\Kernel;
+use App\Support\Testing\FakerImageProvider;
 use Carbon\CarbonInterval;
 use Faker\Factory;
 use Faker\Generator;
-use Illuminate\Database\Connection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 
@@ -40,9 +39,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot():void
     {
-        Model::preventLazyLoading(!app()->isProduction());
-        Model::preventSilentlyDiscardingAttributes(!app()->isProduction()); // котроль полей fillable
-
         Model::shouldBeStrict(!app()->isProduction());
 
         if (app()->isProduction()) {
