@@ -21,7 +21,10 @@ export default ({mode}) => {
         plugins: [
             laravel(
                 {
-                    input: 'resources/js/app.js',
+                    input: [
+                        'resources/js/app.js',
+                        'resources/js/main.js',
+                        'resources/sass/main.sass'],
                     refresh: true
                 },
             ),
