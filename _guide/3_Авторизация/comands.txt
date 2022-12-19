@@ -4,3 +4,4 @@ php artisan make:listener SendEmailNewUser
 
 php artisan make:notification NewUserNotification
 
+php artisan make:migration add_github_id_to_users
