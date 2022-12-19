@@ -10,7 +10,7 @@ export default ({mode}) => {
     return defineConfig({
 
         server: {
-            host: process.env.VITE_HOST,
+            host: 'localhost',
             port: process.env.VITE_PORT,
         },
         resolve: {
@@ -21,6 +21,7 @@ export default ({mode}) => {
         plugins: [
             laravel(
                 {
+                    // publicDirectory: '../public_html',
                     input: [
                         'resources/js/app.js',
                         'resources/js/main.js',
