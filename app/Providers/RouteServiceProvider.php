@@ -61,5 +61,13 @@ class RouteServiceProvider extends ServiceProvider
                     return response('RateLimit', Response::HTTP_TOO_MANY_REQUESTS, $headers);
                 });
         });
+
+        RateLimiter::for('auth', function (Request $request) {
+            return Limit::perMinute(20)
+                ->by($request->ip())
+                ->response(function (Request $request, array $headers){
+                    return response('RateLimit', Response::HTTP_TOO_MANY_REQUESTS, $headers);
+                });
+        });
     }
 }
