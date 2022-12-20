@@ -21,7 +21,7 @@ Route::controller(AuthController::class)->group(function (){
         ->middleware('throttle:auth')
         ->name('store');
 
-    Route::delete('/logout', 'logout')->name('logOut');
+    Route::delete('/logout', 'logOut')->name('logOut');
 
     Route::get('/forgot-password', 'forgot')
         ->middleware('guest')

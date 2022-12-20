@@ -32,6 +32,21 @@ class AuthController extends Controller
         return view('auth.sign-up');
     }
 
+    public function store(SignUpFormRequest $request)
+    {
+
+        $user = User::query()->create([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password')),
+        ]);
+
+        event(new Registered($user));
+        auth()->login($user);
+
+        return redirect(route('home'));
+    }
+
     public function forgot(): Factory | View | Application
     {
         return view('auth.forgot-password');
@@ -100,20 +115,6 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
         return redirect()->intended(route('home'));
-    }
-
-    public function store(SignUpFormRequest $request)
-    {
-        $user = User::query()->create([
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => bcrypt($request->get('password')),
-        ]);
-
-        event(new Registered($user));
-        auth()->login($user);
-
-        return view('index');
     }
 
     protected function logOut():RedirectResponse

@@ -7,3 +7,9 @@ php artisan make:notification NewUserNotification
 php artisan make:migration add_github_id_to_users
 
 composer dump-autoload
+
+No application encryption key has been specified
+=> php artisan config:cache
+
+https://github.com/worksome/request-factories
+composer require --dev worksome/request-factories
