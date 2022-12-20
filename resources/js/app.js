@@ -3,6 +3,11 @@ import '../css/app.css';
 import '../sass/main.sass';
 import './main.js';
 
+import.meta.glob([
+    '../images/**',
+    '../fonts/**',
+])
+
 import Main from "./Modules/_Main/Main.vue";
 import Home from "./Modules/Home/Home.vue";
 
