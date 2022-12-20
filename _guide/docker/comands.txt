@@ -1,0 +1,16 @@
+
+Логи nginx
+docker logs --tail 50 --follow --timestamps nginx
+
+Запуск контейнеров:
+docker-compose up
+
+Остановка контейнеров:
+docker-compose down
+
+Показать запущенные контейнеры:
+docker-compose ps
+
+Показать образы:
+docker-compose images
+
