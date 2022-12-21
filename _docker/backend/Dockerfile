@@ -34,9 +34,8 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
 
 WORKDIR /var/www/backend
 
-RUN composer install
+RUN composer update
 RUN npm install
-RUN npm run build
 
 #CMD ["npm","run","build"]
 #CMD php artisan serve --host=0.0.0.0

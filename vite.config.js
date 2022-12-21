@@ -8,10 +8,9 @@ export default ({mode}) => {
     }
     console.log(process.env.VITE_HOST)
     return defineConfig({
-
         server: {
-            host: 'localhost',
-            port: process.env.VITE_PORT,
+            host: '0.0.0.0',
+            port: 3000
         },
         resolve: {
             alias: {

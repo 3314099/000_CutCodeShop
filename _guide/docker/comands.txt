@@ -14,3 +14,14 @@ docker-compose ps
 Показать образы:
 docker-compose images
 
+Развертывание приложения:
+1. .env из .env.example
+2. заходим в контейнер(в bash):
+docker exec -it project_app bash
+
+3. npm run dev
+
+4. Открываем http://localhost:1027/login
+
+
+

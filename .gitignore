@@ -5,6 +5,8 @@
 /public/vendor
 /storage/*.key
 /vendor
+/tmp
+/_docker/nginx/log
 .env
 .env.backup
 .env.production
