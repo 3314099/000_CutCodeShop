@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
       apt-get clean && \
       rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY ./_docker/php/php.ini /usr/local/etc/php/conf.d/php.ini
+COPY ./_docker/dev/php/php.ini /usr/local/etc/php/conf.d/php.ini
 
 COPY . /var/www/backend
 
