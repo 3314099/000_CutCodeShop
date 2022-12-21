@@ -37,9 +37,4 @@ WORKDIR /var/www/backend
 RUN composer update
 RUN npm install
 
-#CMD ["npm","run","build"]
-#CMD php artisan serve --host=0.0.0.0
-#CMD npm run dev --host=0.0.0.0
-#CMD ["php-fpm8.0"]
-#EXPOSE 8000
 EXPOSE 9000

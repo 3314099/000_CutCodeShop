@@ -6,11 +6,10 @@ export default ({mode}) => {
     process.env = {
         ...process.env, ...loadEnv(mode, process.cwd())
     }
-    console.log(process.env.VITE_HOST)
     return defineConfig({
         server: {
-            host: '0.0.0.0',
-            port: 3000
+            host: process.env.VITE_HOST,
+            port: process.env.VITE_PORT
         },
         resolve: {
             alias: {
