@@ -1,3 +1,0 @@
-php artisan tinker
-
-User::create(['name' => 'Andrey', 'email'=>'123@mail.ru', 'password'=>bcrypt(123456)])
