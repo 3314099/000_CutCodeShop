@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
       apt-get clean && \
       rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY ./_docker/php/php.ini /usr/local/etc/php/conf.d/php.ini
+COPY ./_docker/dev/php/php.ini /usr/local/etc/php/conf.d/php.ini
 
 COPY . /var/www/backend
 
@@ -37,9 +37,4 @@ WORKDIR /var/www/backend
 RUN composer update
 RUN npm install
 
-#CMD ["npm","run","build"]
-#CMD php artisan serve --host=0.0.0.0
-#CMD npm run dev --host=0.0.0.0
-#CMD ["php-fpm8.0"]
-#EXPOSE 8000
 EXPOSE 9000
