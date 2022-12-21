@@ -2,28 +2,50 @@
 Логи nginx
 docker logs --tail 50 --follow --timestamps nginx
 
-Запуск контейнеров:
-docker-compose up
-
-Остановка контейнеров:
-docker-compose down
-
 Показать запущенные контейнеры:
 docker-compose ps
 
 Показать образы:
 docker-compose images
 
-docker-compose -f docker-compose.dev.yml up -d
-
 Развертывание приложения:
-1. .env из .env.example
-2. заходим в контейнер(в bash):
-docker exec -it project_app bash
 
-3. npm run dev
+1. .env из .env.dev.example
+- APP_NAME
+- поменять параметры ОС => Раскомментировать нужное.
+#----------------
+#DOCKER
+#PORT=1027
+#VITE_HOST="0.0.0.0"
+#VITE_PORT=3000
 
-4. Открываем http://localhost:1027/login
+#WINDOWS
+PORT=8000
+VITE_HOST=localhost
+VITE_PORT=5174
+#----------------
+
+- DB_DATABASE=...., DB_USERNAME=...., DB_PASSWORD=....
+
+-------Для windows------
+2. composer update
+3. npm install
+4. php artisan key:generate
+5. php arttisan serve
+6. npm run dev
+7. Открываем http://localhost:8000
+-------/Для windows------
+
+-------Для MACOS------
+2. Запускаем докер.
+3. Запускаем контейнеры:
+docker-compose -f docker-compose.dev.yml up -d
+4. Заходим в терминал бэкенда:
+docker exec -it backend_${APP_NAME} bash
+5. npm run dev
+4. Открываем http://localhost:${PORT}
+-------Для MACOS------
+
 
 
 
